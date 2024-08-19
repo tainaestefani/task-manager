@@ -2,15 +2,27 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Classe principal que gerencia o sistema de tarefas e interações com o usuário.
+ * Permite ao usuário criar, listar e excluir tarefas, mantendo todas as tarefas em uma lista.
+ */
 public class GerenciadorDeTarefas {
+    // Scanner utilizado para ler a entrada do usuário
     static Scanner scanner = new Scanner(System.in);
+    
+    // Lista que armazena todas as tarefas criadas
     static ArrayList<Tarefa> tarefas = new ArrayList<>();
 
+    /**
+     * Método principal que inicia o sistema de gerenciamento de tarefas.
+     * Exibe o menu principal e permite ao usuário escolher as operações.
+     */
     public static void main(String[] args) {
         System.out.println("Bem-vindo ao Sistema de Gestão de Tarefas!");
         
         boolean continuar = true;
-        while (continuar) { // estrutura de repetição que irá reiniciar o sistema sempre que acabar de executar uma função
+        // Loop que mantém o sistema em execução até o usuário optar por sair
+        while (continuar) {
             System.out.println("\n------ Menu: ------");
             System.out.println("1. Criar nova tarefa");
             System.out.println("2. Listar todas as tarefas");
@@ -18,9 +30,11 @@ public class GerenciadorDeTarefas {
             System.out.println("4. Sair");
             System.out.println("\nEscolha uma opção: ");
 
+            // Lê a opção escolhida pelo usuário
             int escolha = scanner.nextInt();
-            scanner.nextLine();  // Consumir a nova linha pendente
+            scanner.nextLine();  // Consome a nova linha pendente
 
+            // Executa a operação correspondente à escolha do usuário
             switch (escolha) {
                 case 1:
                     criarTarefa();
@@ -42,13 +56,28 @@ public class GerenciadorDeTarefas {
         }
     }
 
+    /**
+     * Método que permite ao usuário criar uma nova tarefa.
+     * Realiza a validação dos dados de entrada, como o limite de caracteres no título e a data de vencimento.
+     */
     public static void criarTarefa() {
         System.out.println("\nDigite o título da tarefa:");
         String tituloTarefa = scanner.nextLine();
-
+        // Verifica se o título não ultrapassa 50 caracteres
+        while (true) {
+            if (tituloTarefa.length() <= 50) {
+                break; // Sai do loop se o título for válido
+            } else {
+                System.out.println("Título muito longo. Insira um título com no máximo 50 caracteres.");
+                tituloTarefa = scanner.nextLine();
+            }
+        }
+        
+        // Lê a descrição da tarefa
         System.out.println("Digite a descrição da tarefa:");
         String descricaoTarefa = scanner.nextLine();
 
+        // Lê e valida a data de vencimento da tarefa
         System.out.println("Digite a data de vencimento (Formato: YYYY-MM-DD):");
         String dataVencimento = scanner.nextLine();
         while (true) {
@@ -66,6 +95,7 @@ public class GerenciadorDeTarefas {
             }
         }
 
+        // Lê e valida o status da tarefa
         System.out.println("Digite o status da tarefa (Pendente, Em andamento, Concluída):");
         String statusTarefa = scanner.nextLine();
         while (true) {
@@ -86,6 +116,10 @@ public class GerenciadorDeTarefas {
         System.out.println("\nTarefa criada com sucesso!");
     }
 
+    /**
+     * Método que exibe a lista de todas as tarefas criadas.
+     * Caso não existam tarefas cadastradas, informa ao usuário.
+     */
     public static void listarTarefas() {
         System.out.println("\nLista de Tarefas:");
         if (tarefas.isEmpty()) {
@@ -101,12 +135,16 @@ public class GerenciadorDeTarefas {
         }
     }
 
+    /**
+     * Método que permite ao usuário excluir uma tarefa existente.
+     * Exibe a lista de tarefas e solicita que o usuário escolha o código da tarefa a ser excluída.
+     */
     public static void excluirTarefa() {
         listarTarefas();
         if (!tarefas.isEmpty()) {
             System.out.println("\nDigite o código da tarefa que deseja excluir:");
             int index = scanner.nextInt() - 1;
-            scanner.nextLine();  // Consumir a nova linha pendente
+            scanner.nextLine();  // Consome a nova linha pendente
 
             if (index >= 0 && index < tarefas.size()) {
                 tarefas.remove(index);
@@ -118,12 +156,22 @@ public class GerenciadorDeTarefas {
     }
 }
 
+/**
+ * Classe que representa uma tarefa, contendo os atributos título, descrição, data de vencimento e status.
+ */
 class Tarefa {
     private String titulo;
     private String descricao;
     private String dataVencimento;
     private String status;
 
+    /**
+     * Construtor da classe Tarefa.
+     * @param titulo Título da tarefa
+     * @param descricao Descrição da tarefa
+     * @param dataVencimento Data de vencimento da tarefa
+     * @param status Status da tarefa (Pendente, Em andamento, Concluída)
+     */
     public Tarefa(String titulo, String descricao, String dataVencimento, String status) {
         this.titulo = titulo;
         this.descricao = descricao;
@@ -131,18 +179,34 @@ class Tarefa {
         this.status = status;
     }
 
+    /**
+     * Retorna o título da tarefa.
+     * @return Título da tarefa
+     */
     public String getTitulo() {
         return titulo;
     }
 
+    /**
+     * Retorna a descrição da tarefa.
+     * @return Descrição da tarefa
+     */
     public String getDescricao() {
         return descricao;
     }
 
+    /**
+     * Retorna a data de vencimento da tarefa.
+     * @return Data de vencimento da tarefa
+     */
     public String getDataVencimento() {
         return dataVencimento;
     }
 
+    /**
+     * Retorna o status da tarefa.
+     * @return Status da tarefa
+     */
     public String getStatus() {
         return status;
     }
