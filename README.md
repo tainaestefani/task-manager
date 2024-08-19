@@ -14,11 +14,15 @@ Este é um sistema simples de gerenciamento de tarefas desenvolvido em Java. O s
 
 ## 🔧 Abrir e Executar o Projeto
 
-* Baixar o [Java SE 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) na sua máquina.
-* Verificar no terminal CMD se está instalado com o seguinte comando: `java -version`.
-* Baixar a API [Visual Studio Code](https://code.visualstudio.com/download).
-* Baixar a [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack).
-* Executar o programa como Debug Java ou como Run Java.
+* Clone este repositório com o comando:
+```bash
+git clone <https://github.com/tainaestefani/task-manager.git>
+```
+* Baixe o [Java SE 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) na sua máquina.
+* Verifique no terminal CMD se está instalado com o seguinte comando: `java -version`.
+* Baixe a IDE [Visual Studio Code](https://code.visualstudio.com/download) ou qualquer uma que seja possível a execução.
+* Baixe a [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack).
+* Execute o programa como Debug Java ou Run Java.
 
 ## ⚙️ Tecnologias Utilizadas
 
@@ -28,3 +32,6 @@ Este é um sistema simples de gerenciamento de tarefas desenvolvido em Java. O s
 ## 🧑‍💻 Autor
 
 [<img alt="Profile Pic" src="https://avatars.githubusercontent.com/u/154456749?v=4" width="115" style="border-radius:50%"><br><sub>Tainá Estefani Martins</sub>](https://github.com/tainaestefani)
+
+## License
+The MIT License (MIT).
