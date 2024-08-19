@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="lista (2).ico" alt="Ícone do Projeto" width="32" height="32">
+    <img src="taskList.ico" alt="Ícone do Projeto" width="32" height="32">
     &nbsp;
     Gerenciador de Tarefas
 </h1>
