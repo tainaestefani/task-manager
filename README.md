@@ -4,16 +4,6 @@
     Gerenciador de Tarefas
 </h1>
 
-## Índice 
-
-* [Título e Imagem de Capa](#Título-e-Imagem-de-capa)
-* [Índice](#índice)
-* [Descrição do Projeto](#descrição-do-projeto)
-* [Funcionalidades](#🔨-funcionalidades)
-* [Abrir e Executar o Projeto](#🔧-abrir-e-executar-o-projeto)
-* [Tecnologias Utilizadas](#⚙️-tecnologias-utilizadas)
-* [Autor](#🧑‍💻-autor)
-
 ## Descrição do Projeto
 
 Este é um sistema simples de gerenciamento de tarefas desenvolvido em Java. O sistema permite que os usuários criem, visualizem e excluam tarefas, facilitando a organização e o acompanhamento de suas atividades diárias.
