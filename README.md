@@ -1,4 +1,4 @@
-# 📋 Gerenciador de Tarefas
+<h1 align="center">📋 Gerenciador de Tarefas</h1>
 
 ## Descrição do Projeto
 
