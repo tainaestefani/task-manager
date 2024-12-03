@@ -1,4 +1,4 @@
-<h1 align="center">📋 Gerenciador de Tarefas</h1>
+# 📋 Gerenciador de Tarefas
 
 ## Descrição do Projeto
 Este é um sistema simples de gerenciamento de tarefas desenvolvido em Java. O sistema permite aos usuários realizar operações de C.R.U.D. (Criar, Ler, Atualizar e Deletar) em suas tarefas, facilitando a organização e o acompanhamento de atividades diárias.
